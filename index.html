@@ -7,8 +7,53 @@
     <link rel="icon" href="images/favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
     <script defer src="app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header><img src="images/logo.svg" alt="logo"></header>
+    <main>
+        <div class="main-div1">
+            <div class="bill-div">
+                <h1>Bill</h1>
+                <div class="input-div">
+                    <img src="images/icon-dollar.svg" alt="dollar" style="left: 19px">
+                    <input type="number" id="bill-input" placeholder="0">
+                </div>
+            </div>
+            <div class="tip-div">
+                <h1 id="tip-heading">Select Tip %</h1>
+                <div class="buttons-div">
+                    <button><h1>5%</h1></button>
+                    <button><h1>10%</h1></button>
+                    <button><h1>15%</h1></button>
+                    <button><h1>25%</h1></button>
+                    <button><h1>50%</h1></button>
+                    <input type="number" style="min-width: 0;" placeholder="Custom" id="custom-tip">
+                </div>
+            </div>
+            <div class="people-div">
+                <h1 id="people-heading">Number of People</h1>
+                <div class="input-div">
+                    <img src="images/icon-person.svg" alt="person">
+                    <input type="number" id="people-number" placeholder="0">
+                </div>
+            </div>
+        </div>
+        <div class="main-div2">
+            <div class="result-div">
+                <div class="result">
+                    <h1 class="result-headings">Tip Amount<br><span>/ person</span></h1>
+                    <h1 class="result-prices" id="result-tip">$0.00</h1>
+                </div>
+                <div class="result">
+                    <h1 class="result-headings">Total<br><span>/ person</span></h1>
+                    <h1 class="result-prices" id="result-total">$0.00</h1>
+                </div>
+            </div>
+            <button id="reset-btn"><h1>RESET</h1></button>
+        </div>
+    </main>
 </body>
 </html>
