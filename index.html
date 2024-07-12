@@ -16,28 +16,34 @@
     <main>
         <div class="main-div1">
             <div class="bill-div">
-                <h1>Bill</h1>
+                <div class="bill-people-heading">
+                    <h1>Bill</h1>
+                    <h1 id="bill-error" style="color: #E17457;"></h1>
+                </div>
                 <div class="input-div">
                     <img src="images/icon-dollar.svg" alt="dollar" style="left: 19px">
-                    <input type="number" id="bill-input" placeholder="0">
+                    <input type="number" id="bill-input" placeholder="0" onchange="change()">
                 </div>
             </div>
             <div class="tip-div">
                 <h1 id="tip-heading">Select Tip %</h1>
                 <div class="buttons-div">
-                    <button><h1>5%</h1></button>
-                    <button><h1>10%</h1></button>
-                    <button><h1>15%</h1></button>
-                    <button><h1>25%</h1></button>
-                    <button><h1>50%</h1></button>
-                    <input type="number" style="min-width: 0;" placeholder="Custom" id="custom-tip">
+                    <button id="p5" onclick="p5()"><h1>5%</h1></button>
+                    <button id="p10" onclick="p10()"><h1>10%</h1></button>
+                    <button id="p15" onclick="p15()"><h1>15%</h1></button>
+                    <button id="p25" onclick="p25()"><h1>25%</h1></button>
+                    <button id="p50" onclick="p50()"><h1>50%</h1></button>
+                    <input type="number" style="min-width: 0;" placeholder="Custom" id="custom-tip" onchange="change()">
                 </div>
             </div>
             <div class="people-div">
-                <h1 id="people-heading">Number of People</h1>
+                <div class="bill-people-heading">
+                    <h1 id="people-heading">Number of People</h1>
+                    <h1 id="people-error" style="color: #E17457;"></h1>
+                </div>
                 <div class="input-div">
                     <img src="images/icon-person.svg" alt="person">
-                    <input type="number" id="people-number" placeholder="0">
+                    <input type="number" id="people-number" placeholder="0" onchange="change()">
                 </div>
             </div>
         </div>
@@ -52,7 +58,7 @@
                     <h1 class="result-prices" id="result-total">$0.00</h1>
                 </div>
             </div>
-            <button id="reset-btn"><h1>RESET</h1></button>
+            <button id="reset-btn" onclick="reset()"><h1>RESET</h1></button>
         </div>
     </main>
 </body>

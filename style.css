@@ -47,6 +47,11 @@ main{
     color: #5E7A7D;
     margin-bottom: 6px;
 }
+.bill-people-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .input-div{
     position: relative;
 }
@@ -76,7 +81,7 @@ main{
     cursor: pointer;
 }
 .input-div input:focus{
-    border: 2px solid #26C2AE;
+    border: 2px solid #26C2AE !important;
     outline: none;
 }
 #tip-heading{
@@ -119,13 +124,13 @@ main{
     color: #547878;
 }
 #custom-tip:focus{
-    border: 2px solid #26C2AE;
+    border: 2px solid #26C2AE !important;
     outline: none;
 }
 #custom-tip:hover{
     cursor: pointer;
 }
-#people-heading{
+.people-div h1{
     font-weight: 700;
     font-size: 16px;
     line-height: 23.7px;
@@ -173,6 +178,9 @@ main{
     background-color: #0D686D;
     border: none;
     border-radius: 5px;
+}
+#reset-btn:active{
+    background-color: #9FE8DF !important;
 }
 #reset-btn h1{
     font-weight: 700;
