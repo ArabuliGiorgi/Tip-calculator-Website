@@ -30,6 +30,7 @@ function reset(){
     document.getElementById("custom-tip").value = "";
     document.getElementById("people-number").value = "";
     RESET.style.backgroundColor = "#0D686D";
+    tip = 0;
     clearTips();
 }
 
