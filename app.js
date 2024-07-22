@@ -3,7 +3,10 @@ let billError = document.getElementById("bill-error");
 let peopleError = document.getElementById("people-error");
 let tipAmount = document.getElementById("result-tip");
 let total = document.getElementById("result-total");
+
+let bill = 0;
 let tip = 0;
+let people = 0;
 
 function clearTips(){
     document.getElementById("custom-tip").style.border = "none";
@@ -95,12 +98,12 @@ function change(){
     total.textContent = "$0.00";
 
     let proceed = true;
-    let bill = document.getElementById("bill-input").value;
+    bill = document.getElementById("bill-input").value;
     if(document.getElementById("custom-tip").value){
         tip = document.getElementById("custom-tip").value;
         clearTips();
     }
-    let people = document.getElementById("people-number").value;
+    people = document.getElementById("people-number").value;
 
     if(bill || tip || people){
         RESET.style.backgroundColor = "#26C2AE";
