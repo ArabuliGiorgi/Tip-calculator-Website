@@ -3,6 +3,7 @@ let billError = document.getElementById("bill-error");
 let peopleError = document.getElementById("people-error");
 let tipAmount = document.getElementById("result-tip");
 let total = document.getElementById("result-total");
+let tipButtons = Array.from(document.querySelectorAll(".tip-btn"));
 
 let bill = 0;
 let tip = 0;
@@ -10,16 +11,10 @@ let people = 0;
 
 function clearTips(){
     document.getElementById("custom-tip").style.border = "none";
-    document.getElementById("p5").style.backgroundColor = "#00474B";
-    document.getElementById("p5").querySelector("h1").style.color = "#FFFFFF";
-    document.getElementById("p10").style.backgroundColor = "#00474B";
-    document.getElementById("p10").querySelector("h1").style.color = "#FFFFFF";
-    document.getElementById("p15").style.backgroundColor = "#00474B";
-    document.getElementById("p15").querySelector("h1").style.color = "#FFFFFF";
-    document.getElementById("p25").style.backgroundColor = "#00474B";
-    document.getElementById("p25").querySelector("h1").style.color = "#FFFFFF";
-    document.getElementById("p50").style.backgroundColor = "#00474B";
-    document.getElementById("p50").querySelector("h1").style.color = "#FFFFFF";
+    tipButtons.forEach((button) => {
+        button.style.backgroundColor = "#00474B";
+        button.querySelector("h1").style.color = "#FFFFFF";
+    })
 }
 
 function reset(){
@@ -37,46 +32,16 @@ function reset(){
     clearTips();
 }
 
-function p5(){
-    tip = 5;
-    clearTips();
-    document.getElementById("custom-tip").value = "";
-    document.getElementById("p5").style.backgroundColor = "#9FE8DF";
-    document.getElementById("p5").querySelector("h1").style.color = "#00474B";
-    change();
-}
-function p10(){
-    tip = 10;
-    clearTips();
-    document.getElementById("custom-tip").value = "";
-    document.getElementById("p10").style.backgroundColor = "#9FE8DF";
-    document.getElementById("p10").querySelector("h1").style.color = "#00474B";
-    change();
-}
-function p15(){
-    tip = 15;
-    clearTips();
-    document.getElementById("custom-tip").value = "";
-    document.getElementById("p15").style.backgroundColor = "#9FE8DF";
-    document.getElementById("p15").querySelector("h1").style.color = "#00474B";
-    change();
-}
-function p25(){
-    tip = 25;
-    clearTips();
-    document.getElementById("custom-tip").value = "";
-    document.getElementById("p25").style.backgroundColor = "#9FE8DF";
-    document.getElementById("p25").querySelector("h1").style.color = "#00474B";
-    change();
-}
-function p50(){
-    tip = 50;
-    clearTips();
-    document.getElementById("custom-tip").value = "";
-    document.getElementById("p50").style.backgroundColor = "#9FE8DF";
-    document.getElementById("p50").querySelector("h1").style.color = "#00474B";
-    change();
-}
+tipButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+        clearTips();
+        document.getElementById("custom-tip").value = "";
+        tip = parseInt(event.target.textContent);
+        button.style.backgroundColor = "#9FE8DF";
+        button.querySelector("h1").style.color = "#00474B";
+        change();
+    })
+});
 
 function format(num){
     let str = num.toString();
@@ -137,6 +102,7 @@ function change(){
         proceed = false;
     }
 
+    // calculate
     if(proceed){
         let calcTip = bill*tip/people/100;
         let calcTotal = Math.round((bill/people + calcTip)*100)/100;
