@@ -43,6 +43,15 @@ tipButtons.forEach((button) => {
     })
 });
 
+document.getElementById("bill-input").addEventListener("input", () => {
+    change();
+});
+document.getElementById("custom-tip").addEventListener("input", () => {
+    change();
+});
+document.getElementById("people-number").addEventListener("input", () => {
+    change();
+});
 function format(num){
     let str = num.toString();
     if(!str.includes(".")){
