@@ -47,6 +47,9 @@ document.getElementById("bill-input").addEventListener("input", () => {
     change();
 });
 document.getElementById("custom-tip").addEventListener("input", () => {
+    if(document.getElementById("custom-tip").value == ""){
+        tip = 0;
+    }
     change();
 });
 document.getElementById("people-number").addEventListener("input", () => {
